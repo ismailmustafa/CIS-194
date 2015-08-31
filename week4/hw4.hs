@@ -34,6 +34,16 @@ insertTree v (Node h l x r)
             height (Node ht _ _ _) = ht
             iRight = insertTree v r
 
+-- Pretty printing tree
+prettyTree :: (Show a) => Tree a -> String
+prettyTree Leaf = ""
+prettyTree (Node h l x r) = prettyPrint((Node h l x r),0)
+
+prettyPrint :: (Show a) => (Tree a, Int)-> String
+prettyPrint (Leaf,_) = ""
+prettyPrint ((Node h l x r),z) = prettyPrint(r,z+6) ++ replicate z ' ' 
+                                 ++ show x ++ "_" ++ show h ++ ['\n'] ++ prettyPrint(l,z+6)
+
 -- Exercise 3
 --
 -- More folds!
