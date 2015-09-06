@@ -3,6 +3,7 @@
 module Calc06 where
 
 import qualified Data.Map as M
+import Data.Monoid
 
 -- Exercise 6
 class Expr a where
@@ -32,6 +33,7 @@ instance HasVars (M.Map String Integer -> Maybe Integer) where
 
 instance Expr (M.Map String Integer -> Maybe Integer) where
     lit = \x _ -> Just x
+    {-
     add = \e1 e2 env -> case (e1 env) of
                             Just x -> case (e2 env) of
                                         Just y -> Just $ x+y
@@ -42,9 +44,13 @@ instance Expr (M.Map String Integer -> Maybe Integer) where
                                         Just y -> Just $ x*y
                                         Nothing -> Nothing
                             Nothing -> Nothing
+    -}
+    add e1 e2 env = (e1 (Sum env) <> e2 (Sum env))
+       -- where f (Just x) = Just $ getSum x
+       --       f Nothing = Nothing
+
 
 withVars :: [(String, Integer)] 
          -> (M.Map String Integer -> Maybe Integer) 
          -> Maybe Integer
 withVars vs e = e $ M.fromList vs
-
