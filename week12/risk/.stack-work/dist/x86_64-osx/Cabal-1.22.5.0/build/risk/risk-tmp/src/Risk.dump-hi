@@ -1,0 +1,726 @@
+
+==================== FINAL INTERFACE ====================
+2015-12-27 14:09:23.219838 UTC
+
+interface main@main:Risk 7103
+  interface hash: a0a5b3175cab118ded4f6c17c0d53d13
+  ABI hash: a9c3650e594feb501b0589535d8bac14
+  export-list hash: 222710b2d2ac5a4d414baa795d9d1630
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 833fd0836409a2bd2bd702cce5667bb0
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Risk.die
+  Risk.first
+  Risk.Army
+  Risk.Battlefield{Risk.Battlefield Risk.attackers Risk.defenders}
+  Risk.DieValue{Risk.DV Risk.unDV}
+module dependencies:
+package dependencies: MonadRandom-0.4.1@Monad_0cTAGpxfdx71w4Ljcfn2l2
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0 mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+orphans: MonadRandom-0.4.1@Monad_0cTAGpxfdx71w4Ljcfn2l2:Control.Monad.Random
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+import  -/  MonadRandom-0.4.1@Monad_0cTAGpxfdx71w4Ljcfn2l2:Control.Monad.Random e32a487ae5fd3775411ff445bd043c89
+import  -/  MonadRandom-0.4.1@Monad_0cTAGpxfdx71w4Ljcfn2l2:Control.Monad.Random.Class 547258f8a78d55bc1527367cfeeaca9a
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
+import  -/  random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL:System.Random 0533f03dd667734fedcae55019ea9151
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fEqDieValue :: GHC.Classes.Eq Risk.DieValue
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Risk.DieValue Risk.$fEqDieValue_$c== Risk.$fEqDieValue_$c/= -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fEqDieValue_$c/= ::
+    Risk.DieValue -> Risk.DieValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.neInt
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fEqDieValue_$c== ::
+    Risk.DieValue -> Risk.DieValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.eqInt
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue :: GHC.Num.Num Risk.DieValue
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Risk.DieValue
+                  Risk.$fNumDieValue_$c+
+                  Risk.$fNumDieValue_$c-
+                  Risk.$fNumDieValue_$c*
+                  Risk.$fNumDieValue_$cnegate
+                  Risk.$fNumDieValue_$cabs
+                  Risk.$fNumDieValue_$csignum
+                  Risk.$fNumDieValue_$cfromInteger -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue_$c* ::
+    Risk.DieValue -> Risk.DieValue -> Risk.DieValue
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Num.$fNumInt_$c*
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue_$c+ ::
+    Risk.DieValue -> Risk.DieValue -> Risk.DieValue
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Num.$fNumInt_$c+
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue_$c- ::
+    Risk.DieValue -> Risk.DieValue -> Risk.DieValue
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Num.$fNumInt_$c-
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue_$cabs :: Risk.DieValue -> Risk.DieValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Num.$fNumInt_$cabs
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0]) ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue_$cfromInteger ::
+    GHC.Integer.Type.Integer -> Risk.DieValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Num.$fNumInt_$cfromInteger
+                  `cast`
+                (<GHC.Integer.Type.Integer>_R ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue_$cnegate :: Risk.DieValue -> Risk.DieValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Num.$fNumInt_$cnegate
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0]) ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fNumDieValue_$csignum :: Risk.DieValue -> Risk.DieValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Num.$fNumInt_$csignum
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0]) ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue :: GHC.Classes.Ord Risk.DieValue
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Risk.DieValue
+                  Risk.$fEqDieValue
+                  Risk.$fOrdDieValue_$ccompare
+                  Risk.$fOrdDieValue_$c<
+                  Risk.$fOrdDieValue_$c<=
+                  Risk.$fOrdDieValue_$c>
+                  Risk.$fOrdDieValue_$c>=
+                  Risk.$fOrdDieValue_$cmax
+                  Risk.$fOrdDieValue_$cmin -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue_$c< ::
+    Risk.DieValue -> Risk.DieValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.ltInt
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue_$c<= ::
+    Risk.DieValue -> Risk.DieValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.leInt
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue_$c> ::
+    Risk.DieValue -> Risk.DieValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.gtInt
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue_$c>= ::
+    Risk.DieValue -> Risk.DieValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.geInt
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue_$ccompare ::
+    Risk.DieValue -> Risk.DieValue -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.compareInt
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R <GHC.Types.Ordering>_R) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue_$cmax ::
+    Risk.DieValue -> Risk.DieValue -> Risk.DieValue
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.$fOrdInt_$cmax
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fOrdDieValue_$cmin ::
+    Risk.DieValue -> Risk.DieValue -> Risk.DieValue
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.$fOrdInt_$cmin
+                  `cast`
+                (Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])
+                 ->_R Sym (Risk.NTCo:DieValue[0])) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue :: System.Random.Random Risk.DieValue
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Risk.DieValue
+                  Risk.$fRandomDieValue_$crandomR
+                  Risk.$fRandomDieValue_$crandom
+                  Risk.$fRandomDieValue_$crandomRs
+                  Risk.$fRandomDieValue_$crandoms
+                  Risk.$fRandomDieValue_$crandomRIO
+                  Risk.$fRandomDieValue_$crandomIO -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Risk.DieValue #)
+  {- Arity: 1, Strictness: <L,U>m,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Random.theStdGen
+                        `cast`
+                      (GHC.IORef.NTCo:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, Risk.DieValue)
+                        @ Risk.DieValue
+                        r#
+                        Risk.$fRandomDieValue2
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of b1 { DEFAULT -> ds1 } } }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue2 ::
+    System.Random.StdGen -> (System.Random.StdGen, Risk.DieValue)
+  {- Arity: 1,
+     Unfolding: (\ a13 :: System.Random.StdGen ->
+                 case System.Random.$wrandomIvalInteger
+                        @ System.Random.StdGen
+                        @ GHC.Types.Int
+                        System.Random.$fRandomGenStdGen
+                        GHC.Num.$fNumInt
+                        Risk.$fRandomDieValue_a3
+                        Risk.$fRandomDieValue_a2
+                        a13 of ww2 { (#,#) ww3 ww4 ->
+                 case ww4 of a'1 { System.Random.StdGen ipv ipv1 ->
+                 (a'1, ww3 `cast` (Sym (Risk.NTCo:DieValue[0]))) } }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue3 ::
+    (Risk.DieValue, Risk.DieValue)
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Risk.DieValue #)
+  {- Arity: 2, Strictness: <L,1*U(1*U(U),1*U(U))><L,U>m,
+     Unfolding: (\ range :: (Risk.DieValue, Risk.DieValue)
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Random.theStdGen
+                        `cast`
+                      (GHC.IORef.NTCo:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
+                 let {
+                   f :: System.Random.StdGen -> (Risk.DieValue, System.Random.StdGen)
+                   = case range of ww { (,) ww1 ww2 ->
+                     Risk.$w$crandomR
+                       @ System.Random.StdGen
+                       System.Random.$fRandomGenStdGen
+                       ww1
+                       ww2 }
+                 } in
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, Risk.DieValue)
+                        @ Risk.DieValue
+                        r#
+                        (\ a13 :: System.Random.StdGen ->
+                         case f a13 of wild1 { (,) v g ->
+                         case g of a'1 { System.Random.StdGen ipv ipv1 -> (a'1, v) } })
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of b1 { DEFAULT -> ds1 } } }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue_$crandom ::
+    System.Random.RandomGen g => g -> (Risk.DieValue, g)
+  {- Arity: 2, Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),A)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ g w :: System.Random.RandomGen g w1 :: g ->
+                 case System.Random.$wrandomIvalInteger
+                        @ g
+                        @ GHC.Types.Int
+                        w
+                        GHC.Num.$fNumInt
+                        Risk.$fRandomDieValue_a3
+                        Risk.$fRandomDieValue_a2
+                        w1 of ww2 { (#,#) ww3 ww4 ->
+                 (ww3 `cast` (Sym (Risk.NTCo:DieValue[0])), ww4) }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue_$crandomIO :: GHC.Types.IO Risk.DieValue
+  {- Arity: 1, Strictness: <L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Risk.$fRandomDieValue1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <Risk.DieValue>_R)) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue_$crandomR ::
+    System.Random.RandomGen g =>
+    (Risk.DieValue, Risk.DieValue) -> g -> (Risk.DieValue, g)
+  {- Arity: 2,
+     Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),A)><S,1*U(1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ g
+                   w :: System.Random.RandomGen g
+                   w1 :: (Risk.DieValue, Risk.DieValue) ->
+                 case w1 of ww { (,) ww1 ww2 -> Risk.$w$crandomR @ g w ww1 ww2 }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue_$crandomRIO ::
+    (Risk.DieValue, Risk.DieValue) -> GHC.Types.IO Risk.DieValue
+  {- Arity: 2, Strictness: <L,1*U(1*U(U),1*U(U))><L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Risk.$fRandomDieValue3
+                  `cast`
+                (<(Risk.DieValue, Risk.DieValue)>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Risk.DieValue>_R)) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue_$crandomRs ::
+    System.Random.RandomGen g =>
+    (Risk.DieValue, Risk.DieValue) -> g -> [Risk.DieValue]
+  {- Arity: 3, Strictness: <L,U><L,U><L,U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ g
+                   $dRandomGen :: System.Random.RandomGen g
+                   ival :: (Risk.DieValue, Risk.DieValue)
+                   g1 :: g ->
+                 GHC.Base.build
+                   @ Risk.DieValue
+                   (\ @ b1
+                      cons :: Risk.DieValue -> b1 -> b1[OneShot]
+                      _nil :: b1[OneShot] ->
+                    let {
+                      rand :: g -> (Risk.DieValue, g)
+                      = Risk.$fRandomDieValue_$crandomR @ g $dRandomGen ival
+                    } in
+                    letrec {
+                      go :: g -> b1 {- Arity: 1 -}
+                      = \ g2 :: g ->
+                        case rand g2 of wild { (,) x g' ->
+                        case x `cast` (Risk.NTCo:DieValue[0]) of nt { GHC.Types.I# ipv ->
+                        cons nt `cast` (Sym (Risk.NTCo:DieValue[0])) (go g') } }
+                    } in
+                    go g1)) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fRandomDieValue_$crandoms ::
+    System.Random.RandomGen g => g -> [Risk.DieValue]
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ g $dRandomGen :: System.Random.RandomGen g g1 :: g ->
+                 GHC.Base.build
+                   @ Risk.DieValue
+                   (\ @ b1
+                      cons :: Risk.DieValue -> b1 -> b1[OneShot]
+                      _nil :: b1[OneShot] ->
+                    letrec {
+                      go :: g -> b1 {- Arity: 1 -}
+                      = \ g2 :: g ->
+                        case Risk.$fRandomDieValue_$crandom
+                               @ g
+                               $dRandomGen
+                               g2 of wild { (,) x g' ->
+                        case x `cast` (Risk.NTCo:DieValue[0]) of nt { GHC.Types.I# ipv ->
+                        cons nt `cast` (Sym (Risk.NTCo:DieValue[0])) (go g') } }
+                    } in
+                    go g1)) -}
+1168dc708f1135b68d839603893d8948
+  $fRandomDieValue_a2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (__integer 6) -}
+5f4c6b2fe99413f50c6d0f041b111b04
+  $fRandomDieValue_a3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (__integer 1) -}
+cf6bff738ba4d5e532b53b8b6c09f9cd
+  $fShowBattlefield :: GHC.Show.Show Risk.Battlefield
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Risk.Battlefield
+                  Risk.$fShowBattlefield_$cshowsPrec
+                  Risk.$fShowBattlefield_$cshow
+                  Risk.$fShowBattlefield_$cshowList -}
+cf6bff738ba4d5e532b53b8b6c09f9cd
+  $fShowBattlefield1 :: Risk.Battlefield -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Risk.Battlefield w1 :: GHC.Base.String ->
+                 case w of ww { Risk.Battlefield ww1 ww2 ->
+                 Risk.$w$cshowsPrec 0 ww1 ww2 w1 }) -}
+0eee6ea56d9d0bfef8b21ac33e1942e3
+  $fShowBattlefield2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Battlefield {"#) -}
+2b8f83012e814e411a8a5387510d0d01
+  $fShowBattlefield3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+38c10f90b2314e6e619bee62f8db08d8
+  $fShowBattlefield4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "defenders = "#) -}
+ef53194bb1122002e86f8ac7974d5ae2
+  $fShowBattlefield5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+5b2c3fe4d3abfb40429bd0d8e515e655
+  $fShowBattlefield6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "attackers = "#) -}
+cf6bff738ba4d5e532b53b8b6c09f9cd
+  $fShowBattlefield_$cshow :: Risk.Battlefield -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(U),1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Risk.Battlefield ->
+                 Risk.$fShowBattlefield_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+cf6bff738ba4d5e532b53b8b6c09f9cd
+  $fShowBattlefield_$cshowList ::
+    [Risk.Battlefield] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Risk.Battlefield
+                   Risk.$fShowBattlefield1) -}
+cf6bff738ba4d5e532b53b8b6c09f9cd
+  $fShowBattlefield_$cshowsPrec ::
+    GHC.Types.Int -> Risk.Battlefield -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U(U),1*U(U))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Risk.Battlefield
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Risk.Battlefield ww3 ww4 ->
+                 Risk.$w$cshowsPrec ww1 ww3 ww4 w2 } }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fShowDieValue :: GHC.Show.Show Risk.DieValue
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Risk.DieValue
+                  Risk.$fShowDieValue_$cshowsPrec
+                  Risk.$fShowDieValue_$cshow
+                  Risk.$fShowDieValue_$cshowList -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fShowDieValue1 :: Risk.DieValue -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Risk.DieValue w1 :: GHC.Base.String ->
+                 Risk.$w$cshowsPrec1 0 w w1) -}
+bc3723a6c3875f2ef8aa092a2bb2326b
+  $fShowDieValue2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "unDV = "#) -}
+0831d142cfa5e019c41bb5d8d2f09c9a
+  $fShowDieValue3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "DV {"#) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fShowDieValue_$cshow :: Risk.DieValue -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U(U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Risk.DieValue ->
+                 Risk.$fShowDieValue_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fShowDieValue_$cshowList :: [Risk.DieValue] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Risk.DieValue
+                   Risk.$fShowDieValue1) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $fShowDieValue_$cshowsPrec ::
+    GHC.Types.Int -> Risk.DieValue -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><L,1*U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int w1 :: Risk.DieValue w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Risk.$w$cshowsPrec1 ww1 w1 w2 }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $w$crandomR ::
+    System.Random.RandomGen g =>
+    Risk.DieValue -> Risk.DieValue -> g -> (Risk.DieValue, g)
+  {- Arity: 3,
+     Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),A)><L,1*U(U)><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ @ g
+                   w :: System.Random.RandomGen g
+                   ww :: Risk.DieValue
+                   ww1 :: Risk.DieValue ->
+                 let {
+                   a13 :: GHC.Integer.Type.Integer
+                   = case ww1
+                            `cast`
+                          (Risk.NTCo:DieValue[0]) of wild1 { GHC.Types.I# y1 ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# 6 y1) of wild2 {
+                       GHC.Types.False -> GHC.Integer.Type.smallInteger y1
+                       GHC.Types.True -> Risk.$fRandomDieValue_a2 } }
+                 } in
+                 let {
+                   a14 :: GHC.Integer.Type.Integer
+                   = case ww
+                            `cast`
+                          (Risk.NTCo:DieValue[0]) of wild1 { GHC.Types.I# y1 ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# 1 y1) of wild2 {
+                       GHC.Types.False -> Risk.$fRandomDieValue_a3
+                       GHC.Types.True -> GHC.Integer.Type.smallInteger y1 } }
+                 } in
+                 \ x :: g ->
+                 case System.Random.$wrandomIvalInteger
+                        @ g
+                        @ GHC.Types.Int
+                        w
+                        GHC.Num.$fNumInt
+                        a14
+                        a13
+                        x of ww2 { (#,#) ww3 ww4 ->
+                 (ww3 `cast` (Sym (Risk.NTCo:DieValue[0])), ww4) }) -}
+0c3f2ac19696ad522fe2921af5fa4779
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Risk.Army -> Risk.Army -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 4, Strictness: <L,U><L,1*U(U)><L,1*U(U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: Risk.Army
+                   ww2 :: Risk.Army
+                   w :: GHC.Base.String ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Risk.$fShowBattlefield6
+                       (case ww1 of ww3 { GHC.Types.I# ww4 ->
+                        case GHC.Show.$wshowSignedInt
+                               0
+                               ww4
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  Risk.$fShowBattlefield5
+                                  (GHC.Base.++
+                                     @ GHC.Types.Char
+                                     Risk.$fShowBattlefield4
+                                     (case ww2 of ww5 { GHC.Types.I# ww6 ->
+                                      case GHC.Show.$wshowSignedInt
+                                             0
+                                             ww6
+                                             (GHC.Base.++
+                                                @ GHC.Types.Char
+                                                Risk.$fShowBattlefield3
+                                                x) of ww7 { (#,#) ww8 ww9 ->
+                                      GHC.Types.:
+                                        @ GHC.Types.Char
+                                        ww8
+                                        ww9 } }))) of ww5 { (#,#) ww6 ww7 ->
+                        GHC.Types.: @ GHC.Types.Char ww6 ww7 } })
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False
+                   -> GHC.Base.++ @ GHC.Types.Char Risk.$fShowBattlefield2 (g w)
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Risk.$fShowBattlefield2
+                           (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w))) }) -}
+9b9d4de6a0c77a9a5e060b69c586253f
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> Risk.DieValue -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <L,U><L,1*U(U)><L,U>, Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   w :: Risk.DieValue
+                   w1 :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Risk.$fShowDieValue3
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Risk.$fShowDieValue2
+                          (case w `cast` (Risk.NTCo:DieValue[0]) of ww2 { GHC.Types.I# ww3 ->
+                           case GHC.Show.$wshowSignedInt
+                                  0
+                                  ww3
+                                  (GHC.Base.++
+                                     @ GHC.Types.Char
+                                     Risk.$fShowBattlefield3
+                                     x) of ww4 { (#,#) ww5 ww6 ->
+                           GHC.Types.: @ GHC.Types.Char ww5 ww6 } }))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w1
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w1)) }) -}
+d2c1e783ad1395d4e6d9a5bbe07b92c8
+  type Army = GHC.Types.Int
+cf6bff738ba4d5e532b53b8b6c09f9cd
+  data Battlefield
+    = Battlefield {attackers :: Risk.Army, defenders :: Risk.Army}
+9b9d4de6a0c77a9a5e060b69c586253f
+  newtype DieValue = DV {unDV :: GHC.Types.Int}
+59d47173302bdc03042ee1b44eb65719
+  attackers :: Risk.Battlefield -> Risk.Army
+  RecSel Risk.Battlefield
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U),A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Risk.Battlefield ->
+                 case ds of wild { Risk.Battlefield ds1 ds2 -> ds1 }) -}
+6b782deb07c608b6773917b14408fdeb
+  defenders :: Risk.Battlefield -> Risk.Army
+  RecSel Risk.Battlefield
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Risk.Battlefield ->
+                 case ds of wild { Risk.Battlefield ds1 ds2 -> ds2 }) -}
+1319f9b6e6d5746f24ff911953f37d90
+  die :: Control.Monad.Random.Rand System.Random.StdGen Risk.DieValue
+  {- Arity: 1, Strictness: <L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Risk.die1
+                  `cast`
+                (Trans
+                     (Sym (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                               <System.Random.StdGen>_N
+                               <Data.Functor.Identity.Identity>_R
+                               <Risk.DieValue>_N))
+                     (Sym (Control.Monad.Random.NTCo:RandT[0]) <System.Random.StdGen>_N <Data.Functor.Identity.Identity>_N <Risk.DieValue>_N)) -}
+fe05e1dc641c68094953074fbaebf516
+  die1 ::
+    System.Random.StdGen
+    -> Data.Functor.Identity.Identity
+         (Risk.DieValue, System.Random.StdGen)
+  {- Arity: 1, Strictness: <L,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ eta2 :: System.Random.StdGen ->
+                 case System.Random.$wrandomIvalInteger
+                        @ System.Random.StdGen
+                        @ GHC.Types.Int
+                        System.Random.$fRandomGenStdGen
+                        GHC.Num.$fNumInt
+                        Risk.$fRandomDieValue_a3
+                        Risk.$fRandomDieValue_a2
+                        eta2 of ww2 { (#,#) ww3 ww4 ->
+                 (ww3 `cast` (Sym (Risk.NTCo:DieValue[0])), ww4)
+                   `cast`
+                 (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                           <(Risk.DieValue, System.Random.StdGen)>_R)) }) -}
+32c9b39bfc5fe0a515c93b524f0e5e5a
+  first :: (a -> b) -> (a, c) -> (b, c)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a13 @ b @ c f :: a13 -> b ds :: (a13, c) ->
+                 case ds of wild { (,) a14 c1 -> (f a14, c1) }) -}
+8c640c503f18644cd5775dea8a4d9efa
+  unDV :: Risk.DieValue -> GHC.Types.Int
+  RecSel Risk.DieValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                Risk.unDV1 `cast` (<Risk.DieValue>_R ->_R Risk.NTCo:DieValue[0]) -}
+706c53d3490dacc78a74c80d2b0d0dba
+  unDV1 :: Risk.DieValue -> Risk.DieValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U)>m,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: Risk.DieValue -> ds) -}
+instance GHC.Classes.Eq [Risk.DieValue] = Risk.$fEqDieValue
+instance GHC.Num.Num [Risk.DieValue] = Risk.$fNumDieValue
+instance GHC.Classes.Ord [Risk.DieValue] = Risk.$fOrdDieValue
+instance System.Random.Random [Risk.DieValue]
+  = Risk.$fRandomDieValue
+instance GHC.Show.Show [Risk.Battlefield] = Risk.$fShowBattlefield
+instance GHC.Show.Show [Risk.DieValue] = Risk.$fShowDieValue
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

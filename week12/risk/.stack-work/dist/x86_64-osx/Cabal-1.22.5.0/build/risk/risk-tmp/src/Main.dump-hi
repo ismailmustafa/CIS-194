@@ -1,0 +1,524 @@
+
+==================== FINAL INTERFACE ====================
+2015-12-27 20:27:24.498457 UTC
+
+interface main@main:Main 7103
+  interface hash: 0d1ddc65269bf8fb19f72548212b7808
+  ABI hash: 881f13dc4b594718058e53f229b0527c
+  export-list hash: 1fe268043c869c20cb40a69a99fb6f9d
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a9df329f6fe859c82744a8fc6bba9bc8
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.battle
+  Main.countUnits
+  Main.formatFloatN
+  Main.invade
+  Main.main
+  Main.numAttackers
+  Main.numDefenders
+  Main.numDiceRolls
+  Main.rollDie
+  Main.successProb
+  Main.successProbHelper1
+  Main.successProbHelper2
+  Main.unitsLost
+module dependencies: Risk
+package dependencies: MonadRandom-0.4.1@Monad_0cTAGpxfdx71w4Ljcfn2l2
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0 mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+orphans: MonadRandom-0.4.1@Monad_0cTAGpxfdx71w4Ljcfn2l2:Control.Monad.Random
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+import  -/  MonadRandom-0.4.1@Monad_0cTAGpxfdx71w4Ljcfn2l2:Control.Monad.Random e32a487ae5fd3775411ff445bd043c89
+import  -/  base-4.8.2.0:Control.Monad 480c5067477275068c9b98be08410df9
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
+import  -/  base-4.8.2.0:Numeric 7a5febcdaefe4560a31129dafeb9ee43
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  Risk a9c3650e594feb501b0589535d8bac14
+  exports: 222710b2d2ac5a4d414baa795d9d1630
+  Army d2c1e783ad1395d4e6d9a5bbe07b92c8
+  Battlefield 46d221ecf015ad99b15fa8d5a1e947a7
+  Battlefield cf6bff738ba4d5e532b53b8b6c09f9cd
+  attackers 59d47173302bdc03042ee1b44eb65719
+  defenders 6b782deb07c608b6773917b14408fdeb
+  die 1319f9b6e6d5746f24ff911953f37d90
+  unDV 8c640c503f18644cd5775dea8a4d9efa
+import  -/  random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL:System.Random 0533f03dd667734fedcae55019ea9151
+e29bdffc3e1f0a46281c7e4e5b55e044
+  $wa ::
+    Risk.Battlefield
+    -> System.Random.StdGen
+    -> (# Risk.Battlefield, System.Random.StdGen #)
+  {- Arity: 2, Strictness: <L,U(U(U),U(U))><L,U>, Inline: [0],
+     Unfolding: (\ w :: Risk.Battlefield w1 :: System.Random.StdGen ->
+                 let {
+                   a7 :: Data.Functor.Identity.Identity
+                           ([GHC.Types.Int], System.Random.StdGen)
+                   = case w of wild { Risk.Battlefield ds1 ds2 ->
+                     case ds1 of wild1 { GHC.Types.I# x ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# x 1) of wild2 {
+                       GHC.Types.False
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<=# x 3) of wild3 {
+                            GHC.Types.False
+                            -> case Main.$wa1 3 w1 of ww { (#,#) ww1 ww2 ->
+                               (ww1, ww2)
+                                 `cast`
+                               (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                                         <([GHC.Types.Int], System.Random.StdGen)>_R)) }
+                            GHC.Types.True
+                            -> case Main.$wa1 (GHC.Prim.-# x 1) w1 of ww { (#,#) ww1 ww2 ->
+                               (ww1, ww2)
+                                 `cast`
+                               (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                                         <([GHC.Types.Int], System.Random.StdGen)>_R)) } }
+                       GHC.Types.True
+                       -> case Main.$wa1 0 w1 of ww { (#,#) ww1 ww2 ->
+                          (ww1, ww2)
+                            `cast`
+                          (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                                    <([GHC.Types.Int], System.Random.StdGen)>_R)) } } } }
+                 } in
+                 let {
+                   a8 :: Data.Functor.Identity.Identity
+                           ([GHC.Types.Int], System.Random.StdGen)
+                   = case w of wild { Risk.Battlefield ds1 ds2 ->
+                     case ds2 of wild1 { GHC.Types.I# x ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# x 0) of wild2 {
+                       GHC.Types.False
+                       -> case x of wild3 {
+                            DEFAULT
+                            -> case Main.$wa1
+                                      2
+                                      (case a7
+                                              `cast`
+                                            (Data.Functor.Identity.NTCo:Identity[0]
+                                                 <([GHC.Types.Int],
+                                                   System.Random.StdGen)>_R) of wild4 { (,) a9 s' ->
+                                       s' }) of ww { (#,#) ww1 ww2 ->
+                               (ww1, ww2)
+                                 `cast`
+                               (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                                         <([GHC.Types.Int], System.Random.StdGen)>_R)) }
+                            1
+                            -> case Main.$wa1
+                                      1
+                                      (case a7
+                                              `cast`
+                                            (Data.Functor.Identity.NTCo:Identity[0]
+                                                 <([GHC.Types.Int],
+                                                   System.Random.StdGen)>_R) of wild4 { (,) a9 s' ->
+                                       s' }) of ww { (#,#) ww1 ww2 ->
+                               (ww1, ww2)
+                                 `cast`
+                               (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                                         <([GHC.Types.Int], System.Random.StdGen)>_R)) } }
+                       GHC.Types.True
+                       -> case Main.$wa1
+                                 0
+                                 (case a7
+                                         `cast`
+                                       (Data.Functor.Identity.NTCo:Identity[0]
+                                            <([GHC.Types.Int],
+                                              System.Random.StdGen)>_R) of wild3 { (,) a9 s' ->
+                                  s' }) of ww { (#,#) ww1 ww2 ->
+                          (ww1, ww2)
+                            `cast`
+                          (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                                    <([GHC.Types.Int], System.Random.StdGen)>_R)) } } } }
+                 } in
+                 let {
+                   units :: [(Risk.Army, Risk.Army)]
+                   = case a7
+                            `cast`
+                          (Data.Functor.Identity.NTCo:Identity[0]
+                               <([GHC.Types.Int], System.Random.StdGen)>_R) of wild { (,) a9 s' ->
+                     Main.countUnits
+                       (GHC.List.zip
+                          @ GHC.Types.Int
+                          @ GHC.Types.Int
+                          (Data.OldList.sortBy @ GHC.Types.Int Main.battle2 a9)
+                          (case a8
+                                  `cast`
+                                (Data.Functor.Identity.NTCo:Identity[0]
+                                     <([GHC.Types.Int],
+                                       System.Random.StdGen)>_R) of wild1 { (,) a10 s'1 ->
+                           Data.OldList.sortBy @ GHC.Types.Int Main.battle2 a10 })) }
+                 } in
+                 (# Risk.Battlefield
+                      (case w of wild { Risk.Battlefield ds1 ds2 ->
+                       case ds1 of wild1 { GHC.Types.I# x ->
+                       case Main.$wgo1 units 0 of ww { DEFAULT ->
+                       GHC.Types.I# (GHC.Prim.-# x ww) } } })
+                      (case w of wild { Risk.Battlefield ds1 ds2 ->
+                       case ds2 of wild1 { GHC.Types.I# x ->
+                       case Main.$wgo units 0 of ww { DEFAULT ->
+                       GHC.Types.I# (GHC.Prim.-# x ww) } } }),
+                    case a8
+                           `cast`
+                         (Data.Functor.Identity.NTCo:Identity[0]
+                              <([GHC.Types.Int], System.Random.StdGen)>_R) of wild { (,) a9 s' ->
+                    s' } #)) -}
+8ba303aeb5499c6594902f646727ebb7
+  $wa1 ::
+    GHC.Prim.Int#
+    -> System.Random.StdGen
+    -> (# [GHC.Types.Int], System.Random.StdGen #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+d6c93c6c1c2f4c77526a23f6082882ce
+  $wa2 ::
+    GHC.Prim.Int#
+    -> Risk.Army
+    -> System.Random.StdGen
+    -> (# Risk.Battlefield, System.Random.StdGen #)
+  {- Arity: 3, Strictness: <L,U><L,U(U)><L,U>, Inline: [0] -}
+c12db2df0eeac0d4562ed52adeacd068
+  $wgo :: [(Risk.Army, Risk.Army)] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
+62699011e62bf7ebfbba113bdaff98eb
+  $wgo1 :: [(Risk.Army, Risk.Army)] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
+3f9862d40da7b466889e6b34d4fca159
+  $wsuccessProbHelper2 ::
+    GHC.Prim.Int#
+    -> GHC.Types.Double
+    -> Risk.Battlefield
+    -> Control.Monad.Random.Rand System.Random.StdGen GHC.Types.Double
+  {- Arity: 3, Strictness: <S,1*U><L,U(U)><L,U(U(U),U(U))>,
+     Inline: [0] -}
+7f3808d0057679f65762e24b4e32d6a6
+  $wunitsLost ::
+    [(Risk.Army, Risk.Army)] -> (# Risk.Army, Risk.Army #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U>, Inline: [0],
+     Unfolding: (\ w :: [(Risk.Army, Risk.Army)] ->
+                 let {
+                   units :: [(Risk.Army, Risk.Army)] = Main.countUnits w
+                 } in
+                 (# case Main.$wgo1 units 0 of ww { DEFAULT -> GHC.Types.I# ww },
+                    case Main.$wgo units 0 of ww { DEFAULT -> GHC.Types.I# ww } #)) -}
+df30e1a1c58651f0b7996fc576f999b9
+  battle ::
+    Risk.Battlefield
+    -> Control.Monad.Random.Rand System.Random.StdGen Risk.Battlefield
+  {- Arity: 2, Strictness: <L,U(U(U),U(U))><L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Main.battle1
+                  `cast`
+                (<Risk.Battlefield>_R
+                 ->_R Trans
+                          (Sym (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                                    <System.Random.StdGen>_N
+                                    <Data.Functor.Identity.Identity>_R
+                                    <Risk.Battlefield>_N))
+                          (Sym (Control.Monad.Random.NTCo:RandT[0]) <System.Random.StdGen>_N <Data.Functor.Identity.Identity>_N <Risk.Battlefield>_N)) -}
+24387e654ee9dbb7957dbda96b70f006
+  battle1 ::
+    Risk.Battlefield
+    -> System.Random.StdGen
+    -> Data.Functor.Identity.Identity
+         (Risk.Battlefield, System.Random.StdGen)
+  {- Arity: 2, Strictness: <L,U(U(U),U(U))><L,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Risk.Battlefield w1 :: System.Random.StdGen ->
+                 case Main.$wa w w1 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2)
+                   `cast`
+                 (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                           <(Risk.Battlefield, System.Random.StdGen)>_R)) }) -}
+dfd4c962fc1eee91dc1114a0cfae4361
+  battle2 :: GHC.Types.Int -> GHC.Types.Int -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ x :: GHC.Types.Int y :: GHC.Types.Int ->
+                 GHC.Classes.compareInt y x) -}
+fb61beb451c6eebfb15b89e061f4c444
+  countUnits :: [(Risk.Army, Risk.Army)] -> [(Risk.Army, Risk.Army)]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+f0a539d4963f71cea10e258a9527727d
+  formatFloatN ::
+    GHC.Float.RealFloat a => a -> GHC.Types.Int -> GHC.Base.String
+  {- Arity: 3,
+     Strictness: <S(LLLLLLLLLLC(S)LLLLL),U(U(U(A,U(U(C(C1(U)),A),A,C(C1(U)),A,A,A,A,A),A),A,A,A,A,A,A),U(U(U(U,U,U,U,U,U,U),U,U,U),U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U),C(U),C(U(U)),C(U(1*U(U),A)),C(U(U,U)),A,A,A,A,C(U),C(U),A,C(U),A,A)><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a7
+                   $dRealFloat :: GHC.Float.RealFloat a7
+                   floatNum :: a7
+                   numOfDecimals :: GHC.Types.Int ->
+                 GHC.Float.formatRealFloatAlt
+                   @ a7
+                   $dRealFloat
+                   GHC.Float.FFFixed
+                   (GHC.Base.Just @ GHC.Types.Int numOfDecimals)
+                   GHC.Types.False
+                   floatNum) -}
+05bc3e0320dbadd87eabab8c4b164873
+  invade ::
+    Risk.Battlefield
+    -> Control.Monad.Random.Rand System.Random.StdGen Risk.Battlefield
+  {- Arity: 2, Strictness: <S(SL),1*U(U(U),U(U))><L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Main.invade1
+                  `cast`
+                (<Risk.Battlefield>_R
+                 ->_R Trans
+                          (Sym (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                                    <System.Random.StdGen>_N
+                                    <Data.Functor.Identity.Identity>_R
+                                    <Risk.Battlefield>_N))
+                          (Sym (Control.Monad.Random.NTCo:RandT[0]) <System.Random.StdGen>_N <Data.Functor.Identity.Identity>_N <Risk.Battlefield>_N)) -}
+9475563fcd88955704c548bff2efb573
+  invade1 ::
+    Risk.Battlefield
+    -> System.Random.StdGen
+    -> Data.Functor.Identity.Identity
+         (Risk.Battlefield, System.Random.StdGen)
+  {- Arity: 2, Strictness: <S(SL),1*U(U(U),U(U))><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Risk.Battlefield w1 :: System.Random.StdGen ->
+                 case w of ww { Risk.Battlefield ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.I# ww4 ->
+                 case Main.$wa2 ww4 ww2 w1 of ww5 { (#,#) ww6 ww7 ->
+                 (ww6, ww7)
+                   `cast`
+                 (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                           <(Risk.Battlefield, System.Random.StdGen)>_R)) } } }) -}
+db92fa1b8ce7b813d54d55433d1d57c9
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+0c4599252f5f478ab2e95208b3889f5c
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Random.theStdGen
+                        `cast`
+                      (GHC.IORef.NTCo:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, System.Random.StdGen)
+                        @ System.Random.StdGen
+                        r#
+                        System.Random.newStdGen2
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of b1 { System.Random.StdGen ipv2 ipv3 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.shows6
+                      (case ((Main.$wsuccessProbHelper2 1000 Main.main7 Main.main5)
+                               `cast`
+                             (Trans
+                                  (Control.Monad.Random.NTCo:RandT[0] <System.Random.StdGen>_N <Data.Functor.Identity.Identity>_N <GHC.Types.Double>_N)
+                                  (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                                       <System.Random.StdGen>_N
+                                       <Data.Functor.Identity.Identity>_R
+                                       <GHC.Types.Double>_N))
+                               b1)
+                              `cast`
+                            (Data.Functor.Identity.NTCo:Identity[0]
+                                 <(GHC.Types.Double,
+                                   System.Random.StdGen)>_R) of wild1 { (,) a7 ds2 ->
+                       case a7 of ww { GHC.Types.D# ww1 ->
+                       GHC.Show.showLitString
+                         (GHC.Float.$w$sformatRealFloatAlt
+                            GHC.Float.FFFixed
+                            Main.main3
+                            GHC.Types.False
+                            ww1)
+                         Main.main2 } }))
+                   GHC.Types.True
+                   ipv } } }) -}
+145338212fedb68db4b73df0768c8bd1
+  main2 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+b8470d88e0a6f469fd9824a20c275eea
+  main3 :: GHC.Base.Maybe GHC.Types.Int
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just @ GHC.Types.Int Main.main4) -}
+ee4dbf04acfd143992518c7535b0876b
+  main4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3) -}
+31aca44f84242e912582ea4be9f0b6ff
+  main5 :: Risk.Battlefield
+  {- HasNoCafRefs,
+     Unfolding: (Risk.Battlefield Main.main6 Main.main6) -}
+5ab72582fcbbd835f515ac457de932d6
+  main6 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 20) -}
+caa343abaeacb1c6301f4c19cb4d2cae
+  main7 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 1000.0) -}
+f00af775da04554510645e32796ba8bc
+  main8 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+9f9c4d37d48b4157f30bf48b4c0bcd2f
+  numAttackers :: Risk.Battlefield -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ b :: Risk.Battlefield ->
+                 case b of wild { Risk.Battlefield ds1 ds2 ->
+                 case ds1 of wild1 { GHC.Types.I# x ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<=# x 1) of wild2 {
+                   GHC.Types.False
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<=# x 3) of wild3 {
+                        GHC.Types.False -> Main.main4
+                        GHC.Types.True -> GHC.Types.I# (GHC.Prim.-# x 1) }
+                   GHC.Types.True -> Main.numAttackers1 } } }) -}
+12b14bc58053120dc0520bbd04dacf35
+  numAttackers1 :: Risk.Army
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+6e3306b35139041b6130e557aadf1570
+  numDefenders :: Risk.Battlefield -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ b :: Risk.Battlefield ->
+                 case b of wild { Risk.Battlefield ds1 ds2 ->
+                 case ds2 of wild1 { GHC.Types.I# x ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<=# x 0) of wild2 {
+                   GHC.Types.False
+                   -> case x of wild3 { DEFAULT -> Main.numDefenders1 1 -> wild1 }
+                   GHC.Types.True -> Main.numAttackers1 } } }) -}
+aed4fa7a08d6cdccf24ebb18f9fb82f4
+  numDefenders1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2) -}
+41ca4f804735fbb2854b8144038194f6
+  numDiceRolls :: Risk.Battlefield -> (GHC.Types.Int, GHC.Types.Int)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ b :: Risk.Battlefield ->
+                 (Main.numAttackers b, Main.numDefenders b)) -}
+dff3abe739252f7fb50ed19f359ee56c
+  rollDie ::
+    GHC.Types.Int
+    -> Control.Monad.Random.Rand System.Random.StdGen [GHC.Types.Int]
+  {- Arity: 2, Strictness: <S(S),1*U(1*U)><L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Main.rollDie1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R Trans
+                          (Sym (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                                    <System.Random.StdGen>_N
+                                    <Data.Functor.Identity.Identity>_R
+                                    <[GHC.Types.Int]>_N))
+                          (Sym (Control.Monad.Random.NTCo:RandT[0]) <System.Random.StdGen>_N <Data.Functor.Identity.Identity>_N <[GHC.Types.Int]>_N)) -}
+84d2999990e9893f14f5772fd37ddc49
+  rollDie1 ::
+    GHC.Types.Int
+    -> System.Random.StdGen
+    -> Data.Functor.Identity.Identity
+         ([GHC.Types.Int], System.Random.StdGen)
+  {- Arity: 2, Strictness: <S(S),1*U(1*U)><L,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: GHC.Types.Int w1 :: System.Random.StdGen ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case Main.$wa1 ww1 w1 of ww2 { (#,#) ww3 ww4 ->
+                 (ww3, ww4)
+                   `cast`
+                 (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                           <([GHC.Types.Int], System.Random.StdGen)>_R)) } }) -}
+5fb628b87f21315f5b9e35c541bd95b8
+  successProb ::
+    Risk.Battlefield
+    -> Control.Monad.Random.Rand System.Random.StdGen GHC.Types.Double
+  {- Arity: 1, Strictness: <L,U(U(U),U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ b :: Risk.Battlefield ->
+                 Main.successProbHelper2
+                   Main.successProb1
+                   (GHC.Types.D# 1000.0)
+                   b) -}
+ab4ab7ecce6a89c243312ac5549f651a
+  successProb1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1000) -}
+c3a124e70dfc28bb36e453c94c9022de
+  successProbHelper1 ::
+    GHC.Types.Int
+    -> Risk.Battlefield
+    -> Control.Monad.Random.Rand System.Random.StdGen GHC.Types.Double
+  {- Arity: 2, Strictness: <S(S),U(U)><L,U(U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ n :: GHC.Types.Int b :: Risk.Battlefield ->
+                 Main.successProbHelper2
+                   n
+                   (GHC.Float.RealFracMethods.int2Double n)
+                   b) -}
+3a45600131f0c3ffa10ea5cff798a620
+  successProbHelper2 ::
+    GHC.Types.Int
+    -> GHC.Types.Double
+    -> Risk.Battlefield
+    -> Control.Monad.Random.Rand System.Random.StdGen GHC.Types.Double
+  {- Arity: 3, Strictness: <S(S),1*U(1*U)><L,U(U)><L,U(U(U),U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: GHC.Types.Double
+                   w2 :: Risk.Battlefield ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$wsuccessProbHelper2 ww1 w1 w2 }) -}
+e4b5e12ae74a9c7b27d7ad0e95de5ef0
+  unitsLost :: [(Risk.Army, Risk.Army)] -> (Risk.Army, Risk.Army)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: [(Risk.Army, Risk.Army)] ->
+                 case Main.$wunitsLost w of ww { (#,#) ww1 ww2 -> (ww1, ww2) }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
